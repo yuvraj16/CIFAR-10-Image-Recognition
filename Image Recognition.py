@@ -18,7 +18,6 @@ plt.ion()   # interactive mode
 
 
 
-
 # Loading the data with the use of torchvision and torch.utils.data packages
 # Normalizing Data
 data_transforms = transforms.Compose([
