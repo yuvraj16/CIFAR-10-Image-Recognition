@@ -89,11 +89,6 @@ device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
 
 
-
-
-
-
-
 #Convnet as a feature extractor
 #Freezing all the layers other than the final layer
 #Freezing the gradient parameter so that the gradient is not computed backwards
@@ -207,10 +202,6 @@ model_conv = train_model(model_conv, criterion, optimizer_conv,
 
 
 
-
-
-
-
 # Finetuning the Convnet
 # Load a pretrained model and reset final fully connected layer.
 # Cross-entropy loss captures error on the target class. It discards any notion of errors that you might consider "false positive" and does not care how predicted
@@ -239,7 +230,6 @@ exp_lr_scheduler = lr_scheduler.StepLR(optimizer_ft, step_size=7, gamma=0.1)
 # Training Model
 model_ft = train_model(model_ft, criterion, optimizer_ft, exp_lr_scheduler,
                        num_epochs=25)
-
 
 
 
